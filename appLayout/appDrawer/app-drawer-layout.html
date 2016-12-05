@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>app-drawer-layout</title>
+
+    <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../bower_components/polymer/polymer.html">
+    <link rel="import" href="https://polymerElements.github.io/app-layout/demo/sample-content.html">
+    <link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html">
+    <link rel="import" href="../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
+    <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+    <link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+
+    <style is="custom-style">
+        app-drawer {
+            --app-drawer-width : 256px;
+            --app-drawer-content-container : {
+                background-color : #00b0ff;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <app-header-layout>
+        <app-header>
+            <h1>AppDrawer</h1>
+        </app-header>
+    </app-header-layout>
+
+    <app-drawer-layout>
+
+        <app-drawer align="right" transitionDuration='5000' swipe-open>
+            <h3>Hello</h3>
+        </app-drawer>
+        <div>
+            <paper-icon-button icon="menu" drawer-toggle>Menu</paper-icon-button>
+            <sample-content size="100"></sample-content>
+        </div>
+    </app-drawer-layout>
+
+    <script>
+
+    </script>
+</body>
+</html>
