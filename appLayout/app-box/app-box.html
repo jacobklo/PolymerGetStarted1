@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>app-box</title>
+
+    <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../bower_components/polymer/polymer.html">
+    <link rel="import" href="https://polymerElements.github.io/app-layout/demo/sample-content.html">
+    <link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
+    <link rel="import" href="../bower_components/app-layout/app-scroll-effects/effects/parallax-background.html">
+    <link rel="import" href="../bower_components/app-layout/app-box/app-box.html">
+
+    <style is="custom-style">
+        header {
+            background-color: grey;
+            height: 128px;
+        }
+
+        app-toolbar {
+            font-size : 20px;
+            font-weight: 400;
+            letter-spacing : 10px;
+            text-align : center;
+            color  : #1a237e;
+        }
+
+        .nav {
+            height : 64px;
+            margin : 0;
+            padding : 0;
+            text-align: center;
+            background-color: rgba(255,255,255,0.8);
+        }
+
+        .nav li {
+            display: inline-block;
+            list-style: none;
+        }
+
+        .nav a {
+            display : inline-block;
+            font-weight: 12px;
+            line-height: 64px;
+            text-decoration: none;
+            color: black;
+            margin : 0 10px;
+        }
+
+        .nav a:hover {
+            color: #444;
+            border-bottom: 1px solid #00b0ff;
+        }
+        [threshold-triggered] {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            -webkit-backdrop-filter: saturate(180%) blur(30px);
+            backdrop-filter: saturate(180%) blur(30px);
+        }
+
+        .first, .second, .third, .fourth {
+            height : 640px;
+        }
+
+        .second {
+            --app-box-background-front-layer: {
+                background-image: url(//app-layout-assets.appspot.com/assets/bg2.jpg);
+                background-position: bottom;
+                padding-bottom: 120px;
+                margin-top: -20px;
+                height: 100%;
+            };
+        }
+
+        .third {
+            --app-box-background-front-layer: {
+                background-image: url(//app-layout-assets.appspot.com/assets/bg3.jpg);
+                background-position: bottom;
+                padding-bottom: 120px;
+                margin-top: -20px;
+                height: 100%;
+            };
+        }
+
+        .fourth {
+            --app-box-background-front-layer: {
+                background-image: url(//app-layout-assets.appspot.com/assets/bg4.jpg);
+                background-position: bottom;
+                padding-bottom: 120px;
+                margin-top: -20px;
+                height: 100%;
+            };
+        }
+
+        section {
+            padding-top : 100px;
+        }
+
+        article {
+            font-weight: 100;
+            max-width: 500px;
+            text-align: center;
+            margin: 0 auto 100px auto;
+        }
+        article h2 {
+            font-weight: 100;
+            font-size: 50px;
+            margin: 5px;
+        }
+        article p {
+            font-size: 18px;
+            line-height: 30px;
+        }
+        article hr {
+            width: 100px;
+            height: 1px;
+            border: none;
+            margin: 20px auto;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <app-toolbar>
+        <div main-title>POLYMER</div>
+    </app-toolbar>
+    <app-box threshold="50">
+        <ul role="navigation" class="nav">
+            <li><a href="#speed">Speed</a></li>
+            <li><a href="#modern">Modern</a></li>
+            <li><a href="#standard">Standard</a></li>
+            <li><a href="#create">Create</a></li>
+        </ul>
+    </app-box>
+</header>
+
+<main>
+    <section id="speed">
+        <article>
+            <hr />
+            <h2>Speed</h2>
+            <p>Build for speed</p>
+        </article>
+        <app-box class="first" effects="parallax-background">
+            <img background src="//app-layout-assets.appspot.com/assets/bg1.jpg" style="width:100%; height: 900px" />
+        </app-box>
+    </section>
+
+    <section id="modern">
+        <article>
+            <hr />
+            <h2>Modern</h2>
+            <p>Build for Modern</p>
+        </article>
+        <app-box class="second" effects="parallax-background">
+        </app-box>
+    </section>
+
+    <section id="standard">
+        <article>
+            <hr />
+            <h2>Standard</h2>
+            <p>Build for Standard</p>
+        </article>
+        <app-box class="third" effects="parallax-background">
+        </app-box>
+    </section>
+
+    <section id="create">
+        <article>
+            <hr />
+            <h2>Create</h2>
+            <p>Build for Create</p>
+        </article>
+        <app-box class="fourth" effects="parallax-background">
+        </app-box>
+    </section>
+
+</main>
+</body>
+</html>
